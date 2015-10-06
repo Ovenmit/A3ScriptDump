@@ -57,8 +57,8 @@ _unit addWeapon _weapons;
 _unit addItemToUniform "ACE_EarPlugs";
 _unit linkItem "ItemWatch";
 for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_fieldDressing";};
-this addItemToUniform "ACE_morphine";
-this addItemToUniform "MiniGrenade";
+_unit addItemToUniform "ACE_morphine";
+_unit addItemToUniform "MiniGrenade";
 
 /*
 //meh?
