@@ -13,41 +13,41 @@ removeAllItems _unit;
 removeAllAssignedItems _unit;
 
 _uniforms = [
-				"U_CAF_AG_AFR_CLOTHES_01", 
-				"U_CAF_AG_AFR_CLOTHES_01a", 
-				"U_CAF_AG_AFR_CLOTHES_01b", 
-				"U_CAF_AG_AFR_CLOTHES_01c", 
-				"U_CAF_AG_AFR_CLOTHES_01d", 
-				"U_CAF_AG_AFR_CLOTHES_01e", 
-				"U_CAF_AG_AFR_CLOTHES_02", 
-				"U_CAF_AG_AFR_CLOTHES_02a", 
-				"U_CAF_AG_AFR_CLOTHES_02b"
-			] call BIS_fnc_selectRandom;
+		"U_CAF_AG_AFR_CLOTHES_01", 
+		"U_CAF_AG_AFR_CLOTHES_01a", 
+		"U_CAF_AG_AFR_CLOTHES_01b", 
+		"U_CAF_AG_AFR_CLOTHES_01c", 
+		"U_CAF_AG_AFR_CLOTHES_01d", 
+		"U_CAF_AG_AFR_CLOTHES_01e", 
+		"U_CAF_AG_AFR_CLOTHES_02", 
+		"U_CAF_AG_AFR_CLOTHES_02a", 
+		"U_CAF_AG_AFR_CLOTHES_02b"
+	] call BIS_fnc_selectRandom;
 			
 _faces = [
-			"AfricanHead_01",
-			"AfricanHead_02",
-			"AfricanHead_03"
-		] call BIS_fnc_selectRandom;
+		"AfricanHead_01",
+		"AfricanHead_02",
+		"AfricanHead_03"
+	] call BIS_fnc_selectRandom;
 		
 _vests = [
-			"V_BandollierB_khk",
-			"V_Chestrig_khk",
-			"V_Chestrig_oli",
-			"V_TacVest_oli",
-			"V_BandollierB_oli",
-			""
-		] call BIS_fnc_selectRandom;
+		"V_BandollierB_khk",
+		"V_Chestrig_khk",
+		"V_Chestrig_oli",
+		"V_TacVest_oli",
+		"V_BandollierB_oli",
+		""
+	] call BIS_fnc_selectRandom;
 
 _weapons = [
-			"CUP_arifle_AKM",
-			"CUP_arifle_AKS",
-			"CUP_hgun_Colt1911",
-			"CUP_hgun_Makarov",
-			"CUP_arifle_AK74",
-			"CUP_hgun_SA61",
-			"CUP_lmg_PKM"
-		] call BIS_fnc_selectRandom;	
+		"CUP_arifle_AKM",
+		"CUP_arifle_AKS",
+		"CUP_hgun_Colt1911",
+		"CUP_hgun_Makarov",
+		"CUP_arifle_AK74",
+		"CUP_hgun_SA61",
+		"CUP_lmg_PKM"
+	] call BIS_fnc_selectRandom;	
 
 _unit setFace _faces;
 _unit setSpeaker "Male01PER";
