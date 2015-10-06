@@ -45,6 +45,7 @@ _weapons = [
 			"CUP_hgun_Colt1911",
 			"CUP_hgun_Makarov",
 			"CUP_arifle_AK74",
+			"CUP_hgun_SA61",
 			"CUP_lmg_PKM"
 		] call BIS_fnc_selectRandom;	
 
@@ -93,6 +94,15 @@ switch (_weapons) do
 	case "CUP_hgun_Makarov":
     {
         for "_i" from 1 to 6 do {_unit addMagazine "CUP_8Rnd_9x18_Makarov_M";};
+    };
+	
+	case "CUP_hgun_SA61":
+    {
+        for "_i" from 1 to 3 do {_unit addMagazine "CUP_20Rnd_B_765x17_Ball_M";};
+		_unit addweapon "CUP_launch_RPG7V";
+		_unit addBackpack "CUP_B_RPGPack_Khaki";
+		for "_i" from 1 to 2 do {_unit addItemToBackpack "CUP_PG7V_M";};
+		_unit addItemToBackpack "CUP_PG7VL_M";
     };
 	
 	case "CUP_lmg_PKM":
