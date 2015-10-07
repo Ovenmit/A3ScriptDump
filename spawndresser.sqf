@@ -1,6 +1,7 @@
 //Skinny Dresser Script
 //By Ovenmit
 //Paste in Spawn AI module expression: { nul = _x execVM "spawndresser.sqf";} foreach (units (_this select 0));
+//Paste in unit init: nul = this execVM "spawndresser.sqf";
 _unit = _this;
 
 removeUniform _unit;
@@ -59,15 +60,6 @@ _unit linkItem "ItemWatch";
 for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_fieldDressing";};
 _unit addItemToUniform "ACE_morphine";
 _unit addItemToUniform "MiniGrenade";
-
-/*
-//meh?
-if (_unit hasWeapon "CUP_arifle_AKM" || _unit hasWeapon "CUP_arifle_AKS") then {
-	for "_i" from 1 to 6 do {_unit addMagazine "CUP_30Rnd_762x39_AK47_M";};
-}else{
-
-};
-*/
 
 switch (_weapons) do
 {
