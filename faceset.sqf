@@ -7,7 +7,7 @@ All units of side (EAST, WEST, ETC)
 }} foreach allUnits;
 
 OR unit init:
-nul = [_unit,"<faceoption>"] execVM "scripts\faceset.sqf";
+nul = [this,"<faceoption>"] execVM "scripts\faceset.sqf";
 
 OR Paste in Spawn AI module expression: 
 { nul = [_x,"<faceoption>"] execVM "scripts\faceset.sqf";} foreach (units (_this select 0));
@@ -26,6 +26,7 @@ camomed
 eu
 camoeu
 mix
+camomix
 */
 if (!isServer) exitWith {};
 
@@ -255,6 +256,24 @@ switch (_faceset) do
 			"TanoanHead_A3_06",
 			"TanoanHead_A3_08",
 			"AfricanHead_01"
+		];
+		
+		[_unit, _faces] remoteExec ["setFace", 0, _unit];
+	};
+	
+	case "camomix":
+	{
+		_faces = selectRandom 
+		[
+			"PersianHead_A3_04_sa",
+			"PersianHead_A3_04_l",
+			"PersianHead_A3_04_a",
+			"GreekHead_A3_10_a",
+			"GreekHead_A3_10_l",
+			"GreekHead_A3_10_sa",
+			"WhiteHead_22_a",
+			"WhiteHead_22_l",
+			"WhiteHead_22_sa"
 		];
 		
 		[_unit, _faces] remoteExec ["setFace", 0, _unit];
