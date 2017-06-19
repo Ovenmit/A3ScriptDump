@@ -3,19 +3,26 @@ mission init:
 All units of side (EAST, WEST, ETC)
 
 {if (side _x == WEST) then { 
- nul = [_x,"<faceoption>"] execVM "scripts\faceset.sqf"; 
+ nul = [_x,"<faceoption>","<speaker>"] execVM "scripts\faceset.sqf"; 
 }} foreach allUnits;
 
+{if (side _x == WEST || side _x == civilian || side _x == resistance ) then {  
+  nul = [_x,"<faceoption>","<speaker>"] execVM "scripts\faceset.sqf"; 
+ }else { 
+  nul = [_x,"<faceoption>","<speaker>"] execVM "scripts\faceset.sqf"; 
+ }} foreach allunits;
+
 OR unit init:
-nul = [this,"<faceoption>"] execVM "scripts\faceset.sqf";
+nul = [this,"<faceoption>","<speaker>"] execVM "scripts\faceset.sqf";
 
 OR Paste in Spawn AI module expression: 
-{ nul = [_x,"<faceoption>"] execVM "scripts\faceset.sqf";} foreach (units (_this select 0));
+{ nul = [_x,"<faceoption>","<speaker>"] execVM "scripts\faceset.sqf";} foreach (units (_this select 0));
 
 OR in trigger on activation field:
-{nul = [_x,"<faceoption>"] execVM "scripts\faceset.sqf"} foreach thislist;
+{nul = [_x,"<faceoption>","<speaker>"] execVM "scripts\faceset.sqf"} foreach thislist;
 
 Options:
+Faces:
 asian
 camoasian
 african
@@ -27,11 +34,21 @@ eu
 camoeu
 mix
 camomix
+
+Speaker:
+fre
+freng
+far
+chi
+uke
+use
+alt
 */
 if (!isServer) exitWith {};
 
 _unit = _this select 0;
 _faceset = _this select 1;
+_speakset = _this select 2;
 
 uiSleep 0.5;
 
@@ -277,6 +294,111 @@ switch (_faceset) do
 		];
 		
 		[_unit, _faces] remoteExec ["setFace", 0, _unit];
+	};
+	
+	default
+	{
+		
+	};
+};
+
+switch (_speakset) do
+{	
+	case "fre":
+	{
+		_voices = selectRandom 
+		[
+			"male01fre",
+			"male02fre",
+			"male03fre"
+		];
+		
+		[_unit, _voices] remoteExec ["setSpeaker", 0, _unit];
+	};
+	
+	case "freng":
+	{
+		_voices = selectRandom 
+		[
+			"male01engfre",
+			"male02engfre"
+		];
+		
+		[_unit, _voices] remoteExec ["setSpeaker", 0, _unit];
+	};
+
+	case "far":
+	{
+		_voices = selectRandom 
+		[
+			"male01per",
+			"male02per",
+			"male03per"
+		];
+		
+		[_unit, _voices] remoteExec ["setSpeaker", 0, _unit];
+	};
+
+	case "chi":
+	{
+		_voices = selectRandom 
+		[
+			"male01chi",
+			"male02chi",
+			"male03chi"
+		];
+		
+		[_unit, _voices] remoteExec ["setSpeaker", 0, _unit];
+	};
+
+	case "uke":
+	{
+		_voices = selectRandom 
+		[
+			"male01engb",
+			"male02engb",
+			"male03engb",
+			"male04engb",
+			"male05engb"
+		];
+		
+		[_unit, _voices] remoteExec ["setSpeaker", 0, _unit];
+	};
+
+	case "use":
+	{
+		_voices = selectRandom 
+		[
+			"male01eng",
+			"male02eng",
+			"male03eng",
+			"male04eng",
+			"male05eng",
+			"male06eng",
+			"male07eng",
+			"male08eng",
+			"male09eng",
+			"male10eng",
+			"male11eng",
+			"male12eng"
+		];
+		
+		[_unit, _voices] remoteExec ["setSpeaker", 0, _unit];
+	};
+
+	case "alt":
+	{
+		_voices = selectRandom 
+		[
+			"male01gre",
+			"male02gre",
+			"male03gre",
+			"male04gre",
+			"male05gre",
+			"male06gre"
+		];
+		
+		[_unit, _voices] remoteExec ["setSpeaker", 0, _unit];
 	};
 	
 	default
